@@ -2,7 +2,6 @@ package id.web.androidhyper.bakingapp.ui.stepssegment.detailstep;
 
 
 import android.annotation.SuppressLint;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;

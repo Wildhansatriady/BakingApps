@@ -22,15 +22,15 @@ import static id.web.androidhyper.bakingapp.ConstantUtils.TYPE_ITEM;
  * Keep Spirit!!
  */
 
-public class StepsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    MainModel mData;
-    StepsClickListener listener;
-    Context mContext;
-    int selectedPosition=-1;
-    boolean isLargeScreen = false;
+ class StepsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    private MainModel mData;
+    private StepsClickListener listener;
+    private Context mContext;
+    private int selectedPosition=-1;
+    private boolean isLargeScreen = false;
 
 
-    public StepsAdapter(Context context,MainModel mData, StepsClickListener listener) {
+    StepsAdapter(Context context, MainModel mData, StepsClickListener listener) {
         this.mData = mData;
         this.listener = listener;
         this.mContext = context;
@@ -53,7 +53,7 @@ public class StepsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         throw new RuntimeException("there is no type that matches the type " + viewType + " + make sure your using types correctly");    }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if(holder instanceof VHIngredients){
             VHIngredients vhIngredients = (VHIngredients) holder;
             byte index=1;
@@ -91,11 +91,12 @@ public class StepsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             if(data.getVideoURL().equals("")){
                 vhSteps.mBtPlay.setVisibility(View.GONE);
             }
+            final int tempPos = position;
             vhSteps.mParentSteps.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (AppUtils.isLargeScreen(mContext))
-                        selectedPosition=position-1;
+                        selectedPosition=tempPos-1;
                     listener.onStepsClicked(vhSteps.getAdapterPosition()-1);
                     notifyDataSetChanged();
 
@@ -104,11 +105,8 @@ public class StepsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         }
     }
 
-    public int getSelectedPosition() {
-        return selectedPosition;
-    }
 
-    public void setSelectedPosition(int selectedPosition) {
+     void setSelectedPosition(int selectedPosition) {
         this.selectedPosition = selectedPosition;
     }
 

@@ -1,12 +1,12 @@
 package id.web.androidhyper.bakingapp.ui.receivelist;
 
+import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
 import android.support.test.espresso.IdlingResource;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -18,19 +18,16 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import id.web.androidhyper.bakingapp.R;
+import id.web.androidhyper.bakingapp.helper.APIInterface;
+import id.web.androidhyper.bakingapp.helper.ApiBuilder;
 import id.web.androidhyper.bakingapp.helper.SimpleIdlingResource;
 import id.web.androidhyper.bakingapp.model.IngredientModel;
 import id.web.androidhyper.bakingapp.model.MainModel;
-import id.web.androidhyper.bakingapp.helper.APIInterface;
-import id.web.androidhyper.bakingapp.helper.ApiBuilder;
 import io.realm.Realm;
 import io.realm.RealmList;
-import io.realm.RealmQuery;
-import io.realm.RealmResults;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import timber.log.Timber;
 
 import static id.web.androidhyper.bakingapp.ConstantUtils.KEY_MAINDATA;
 

@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import id.web.androidhyper.bakingapp.R;
 
 /**
@@ -25,9 +24,8 @@ public class VHSteps extends RecyclerView.ViewHolder {
     ConstraintLayout mParentSteps;
     @BindView(R.id.tvStep)
     TextView mTvSteps;
-    static Unbinder unbinder;
-    public VHSteps(View itemView) {
+    VHSteps(View itemView) {
         super(itemView);
-        unbinder = ButterKnife.bind(this,itemView);
+        ButterKnife.bind(this,itemView);
     }
 }

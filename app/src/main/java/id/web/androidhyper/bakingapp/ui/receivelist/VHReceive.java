@@ -29,7 +29,7 @@ final class VHReceive extends RecyclerView.ViewHolder {
         unbinder = ButterKnife.bind(this,itemView);
     }
 
-    public static void unbindReceiveAdapter(){
+     static void unbindReceiveAdapter(){
         if(unbinder!=null)
             unbinder.unbind();
     }

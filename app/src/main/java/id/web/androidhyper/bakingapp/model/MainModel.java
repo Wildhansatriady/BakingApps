@@ -100,13 +100,7 @@ public class MainModel extends RealmObject implements Parcelable {
         this.steps = steps;
     }
 
-    public int getServings() {
-        return servings;
-    }
 
-    public void setServings(int servings) {
-        this.servings = servings;
-    }
 
     public String getImage() {
         return image;

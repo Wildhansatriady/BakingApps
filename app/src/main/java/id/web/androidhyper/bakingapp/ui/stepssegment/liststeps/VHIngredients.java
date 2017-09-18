@@ -6,7 +6,6 @@ import android.widget.LinearLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import id.web.androidhyper.bakingapp.R;
 
 /**
@@ -17,9 +16,8 @@ import id.web.androidhyper.bakingapp.R;
 public class VHIngredients extends ViewHolder{
     @BindView(R.id.container_ingredients)
     LinearLayout lnContainerIngredients;
-    static Unbinder unbinder;
-    public VHIngredients(View itemView) {
+    VHIngredients(View itemView) {
         super(itemView);
-        unbinder = ButterKnife.bind(this,itemView);
+        ButterKnife.bind(this,itemView);
     }
 }
