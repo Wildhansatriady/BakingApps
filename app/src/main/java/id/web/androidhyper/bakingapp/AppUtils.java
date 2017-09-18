@@ -101,7 +101,11 @@ public final class AppUtils {
 
     public static void setImage(Context mContext, String url, ImageView thumbImage){
         if(url!=null&&!url.equals("")&&!url.equals("-")) {
-            Picasso.with(mContext).load(url).into(thumbImage);
+            Picasso.with(mContext)
+                    .load(url)
+                    .placeholder(R.drawable.ic_cake_accent_48dp)
+                    .error(R.drawable.ic_cake_accent_48dp)
+                    .into(thumbImage);
         }
         else
             Picasso.with(mContext).load(R.drawable.ic_cake_accent_48dp)
