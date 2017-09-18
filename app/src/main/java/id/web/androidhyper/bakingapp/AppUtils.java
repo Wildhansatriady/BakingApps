@@ -99,14 +99,14 @@ public final class AppUtils {
         }
     }
 
-    public static void setGambar(Context mContext, String url, ImageView thumbImage){
+    public static void setImage(Context mContext, String url, ImageView thumbImage){
         if(url!=null&&!url.equals("")&&!url.equals("-")) {
             Picasso.with(mContext).load(url).into(thumbImage);
         }
         else
-            Picasso.with(mContext).load(R.mipmap.ic_launcher)
-                    .placeholder(R.mipmap.ic_launcher)
-                    .error(R.mipmap.ic_launcher)
+            Picasso.with(mContext).load(R.drawable.ic_cake_accent_48dp)
+                    .placeholder(R.drawable.ic_cake_accent_48dp)
+                    .error(R.drawable.ic_cake_accent_48dp)
                     .into(thumbImage);
 
     }

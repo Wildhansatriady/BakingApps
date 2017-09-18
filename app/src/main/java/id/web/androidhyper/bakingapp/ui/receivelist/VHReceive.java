@@ -3,6 +3,7 @@ package id.web.androidhyper.bakingapp.ui.receivelist;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -20,6 +21,8 @@ final class VHReceive extends RecyclerView.ViewHolder {
     TextView mTvReceive;
     @BindView(R.id.holder_receive)
     CardView mHolderReceive;
+    @BindView(R.id.img_receive)
+    ImageView mIvReceive;
     private static Unbinder unbinder;
     VHReceive(View itemView) {
         super(itemView);

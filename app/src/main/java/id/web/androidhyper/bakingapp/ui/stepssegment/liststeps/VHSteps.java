@@ -19,6 +19,8 @@ import id.web.androidhyper.bakingapp.R;
 public class VHSteps extends RecyclerView.ViewHolder {
     @BindView(R.id.iv_btplay)
     ImageView mBtPlay;
+    @BindView(R.id.iv_liststeps)
+    ImageView mIvListSteps;
     @BindView(R.id.parent_steps)
     ConstraintLayout mParentSteps;
     @BindView(R.id.tvStep)

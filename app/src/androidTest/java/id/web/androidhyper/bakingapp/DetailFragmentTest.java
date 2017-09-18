@@ -22,11 +22,14 @@ import id.web.androidhyper.bakingapp.ui.stepssegment.StepsActivity;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.Visibility.VISIBLE;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static android.support.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static id.web.androidhyper.bakingapp.ConstantUtils.KEY_PASSMAINDATA;
 import static id.web.androidhyper.bakingapp.ConstantUtils.KEY_POSITION_LIST;
+import static org.hamcrest.core.AllOf.allOf;
 
 /**
  * Created by wildhan on 9/17/2017 in BakingApp.
@@ -79,7 +82,7 @@ public class DetailFragmentTest {
     public void testContentDetail(){
         //startDetailStepsFragment();
         onView(withId(R.id.short_desc)).check(matches((isDisplayed())));
-        onView(withId(R.id.player_view)).check(matches((isDisplayed())));
+        onView(allOf(withId(R.id.player_view), withEffectiveVisibility(VISIBLE)));
         onView(withId(R.id.short_desc)).check(matches((withText("testUI"))));
 
         onView(withId(R.id.tv_contentdesc)).check(matches((isDisplayed())));

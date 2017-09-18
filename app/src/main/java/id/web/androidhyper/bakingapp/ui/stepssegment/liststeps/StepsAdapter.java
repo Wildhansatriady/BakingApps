@@ -86,6 +86,7 @@ public class StepsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 }
             }
             StepModel data = mData.getSteps().get(position-1);
+            AppUtils.setImage(mContext,data.getThumbnailURL(),vhSteps.mIvListSteps);
             vhSteps.mTvSteps.setText(data.getShortDescription());
             if(data.getVideoURL().equals("")){
                 vhSteps.mBtPlay.setVisibility(View.GONE);
